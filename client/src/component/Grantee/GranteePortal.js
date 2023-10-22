@@ -11,6 +11,9 @@ import {
   CardMedia,
 } from "@material-ui/core";
 
+
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     fontFamily: "Söhne,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
@@ -46,6 +49,8 @@ const useStyles = makeStyles((theme) => ({
     gap: theme.spacing(1),
     justifyContent: "center",
   },
+
+  
   blurred: {
     filter: "blur(5px)",
     transition: "filter 0.3s ease",
