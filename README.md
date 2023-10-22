@@ -32,6 +32,11 @@ To get started with Certicryp, follow these steps:
 
 Join us on this transformative journey as we reshape the future of certificates with Certicryp. Experience the convenience, security, and trust that comes with our innovative DApp. Together, let's unlock the full potential of digital certificates and pave the way for a new era of credentialing.
 
+## Disclaimer
+
+This is in the continuation of another repository that had some errors we were not able to account for, so we created a fresh one and added the code with the last commit. 
+https://github.com/CodeMongerrr/Certicryped
+
 Visit our website at [www.certicryp.com](https://www.certicryp.com) to learn more and get started today!
 
 ## License
