@@ -97,68 +97,72 @@ export default function Owner() {
     await dispatch(getuniversites());
   };
 
+
+  
   return (
-    <Box className={classes.ownerBody}>
-      <div className={classes.formContainer}>
-        <Grid container spacing={4}>
-          <Grid item xs={12}>
-            <Typography
-              variant="h4"
-              align="center"
-              gutterBottom
-              style={{ color: "white" }}
-            >
-              Owner's Portal
-            </Typography>
+    <div>
+      <Box className={classes.ownerBody}>
+        <div className={classes.formContainer}>
+          <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <Typography
+                variant="h4"
+                align="center"
+                gutterBottom
+                style={{ color: "white" }}
+              >
+                Owner's Portal
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <div className={classes.universitiesContainer}>
+                <Typography variant="h6">Approved Universities</Typography>
+                {approvedUniversities.map((university) => (
+                  <Card className={classes.card} key={university._id}>
+                    <CardContent>
+                      <Typography variant="h6">
+                        {university.UniversityName}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        onClick={() => handleCardActionClick(university)}
+                      >
+                        Revoke
+                      </Button>
+                    </CardActions>
+                  </Card>
+                ))}
+              </div>
+            </Grid>
+            <Grid item xs={6}>
+              <div className={classes.universitiesContainer}>
+                <Typography variant="h6">Unapproved Universities</Typography>
+                {unapprovedUniversities.map((university) => (
+                  <Card className={classes.card} key={university._id}>
+                    <CardContent>
+                      <Typography variant="h6">
+                        {university.UniversityName}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => handleCardActionClick(university)}
+                      >
+                        Approve
+                      </Button>
+                    </CardActions>
+                  </Card>
+                ))}
+              </div>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <div className={classes.universitiesContainer}>
-              <Typography variant="h6">Approved Universities</Typography>
-              {approvedUniversities.map((university) => (
-                <Card className={classes.card} key={university._id}>
-                  <CardContent>
-                    <Typography variant="h6">
-                      {university.UniversityName}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                      onClick={() => handleCardActionClick(university)}
-                    >
-                      Revoke
-                    </Button>
-                  </CardActions>
-                </Card>
-              ))}
-            </div>
-          </Grid>
-          <Grid item xs={6}>
-            <div className={classes.universitiesContainer}>
-              <Typography variant="h6">Unapproved Universities</Typography>
-              {unapprovedUniversities.map((university) => (
-                <Card className={classes.card} key={university._id}>
-                  <CardContent>
-                    <Typography variant="h6">
-                      {university.UniversityName}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={() => handleCardActionClick(university)}
-                    >
-                      Approve
-                    </Button>
-                  </CardActions>
-                </Card>
-              ))}
-            </div>
-          </Grid>
-        </Grid>
-      </div>
-    </Box>
+        </div>
+      </Box>
+    </div>
   );
 }
