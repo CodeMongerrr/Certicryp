@@ -96,7 +96,6 @@ const UniversityPortalRahil = ({ mintCertificate, uploadFile, getIdsOfOwner }) =
     ],
   });
 
-  // Function to generate a hashed key based on a token ID
   function generateKey(tokenID) {
     const hashedTokenID = CryptoJS.SHA256(tokenID.toString()).toString();
     return hashedTokenID;
@@ -116,11 +115,7 @@ const UniversityPortalRahil = ({ mintCertificate, uploadFile, getIdsOfOwner }) =
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7,
     });
-    // console.log("encrypted - " + encrypted)
-
-    // Combine IV and ciphertext into a single string
     const encryptedData = iv.toString() + encrypted.toString();
-
     return encryptedData;
   }
 
